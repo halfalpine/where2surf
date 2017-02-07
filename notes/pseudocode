@@ -1,0 +1,10 @@
+var p = period (number)
+var h = significant wave height (number)
+var w = wind speed (number)
+var d = wind direction (number, 0 <= d <= 360)
+var windTable = {"N": 0,
+				
+convert wind to compass direction
+
+wind rules
+ case: 
