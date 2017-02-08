@@ -7,9 +7,7 @@ app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'ejs');
 app.set('views', 'app/views');
 
-app.get('/', function(){
-
-});
+app.use(require('./app/routes/index'));
 
 var server = app.listen(app.get('port'), function() {
   console.log(`Now serving on port ${port}`);
