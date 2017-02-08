@@ -1,10 +1,23 @@
+// Function takes an object, returns a string
+
 var p = period (number)
 var h = significant wave height (number)
 var w = wind speed (number)
 var d = wind direction (number, 0 <= d <= 360)
 var windTable = {"N": 0,
-				
+
 convert wind to compass direction
 
 wind rules
- case: 
+ case: WSW to NW (>247.5 && <315)
+ 		if h > 3
+				if p > 10
+					return 'jacob riis'
+				else if p > 6
+					return '67th st'
+				else
+					return 'stay home'
+
+ case: NW to E (>315 || <90)
+ 		if h > 2.5 && h 
+ case: e to wsw (>=90 && <247.5)
