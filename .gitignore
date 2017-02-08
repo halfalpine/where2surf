@@ -47,4 +47,4 @@ jspm_packages
 .yarn-integrity
 
 # Hide environment variables
-.dotenv
+.env
