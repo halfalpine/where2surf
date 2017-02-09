@@ -4,7 +4,6 @@ let reload = require('reload');
 let app = express();
 
 app.set('port', process.env.PORT || 3000);
-console.log(process.env.PORT);
 app.set('view engine', 'ejs');
 app.set('views', 'app/views');
 

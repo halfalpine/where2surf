@@ -8,6 +8,7 @@ describe('Where2Surf Homepage', function() {
     var promiseHelper;
 
     beforeEach(function() {
+      var window = {};
       var fetchPromise = new Promise(function(resolve, reject) {
         promiseHelper = {
           resolve: resolve,
