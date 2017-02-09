@@ -2,7 +2,7 @@
 require('dotenv').config();
 let express = require('express');
 let router = express.Router();
-let fetch = require('node-fetch');
+ let fetch = require('node-fetch');
 let wavePredictor = require('./wave-predictor.js');
 
 
@@ -10,15 +10,14 @@ router.get('/', function(req, res) {
   const API_KEY = process.env.MSW_KEY;
   const MSW_URL = `http://magicseaweed.com/api/${API_KEY}/forecast/?spot_id=384`;
 
-/*
-  fetch(MSW_URL)
-    .then(function(res) {
-      console.log(res);
-    })
-    .catch(function(err) {
-      console.err(err);
-    });
-*/
+  fetch(MSW_URL).then(function(res) {
+    return res.json();
+  }).then(function(j) {
+    console.log(j);
+  }).catch(function(err) {
+    console.err(err);
+  });
+
     res.render('index');
 });
 
