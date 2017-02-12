@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js",
-    "test": "./node_modules/.bin/jasmine-node spec"
+    "test": "./node_modules/.bin/jasmine spec"
   },
   "repository": {},
   "keywords": [],
@@ -19,12 +19,12 @@
     "dotenv": "^4.0.0",
     "ejs": "^2.5.5",
     "express": "^4.14.0",
-    "jasmine-node": "^1.14.5",
     "noaa-weather": "0.0.2",
     "node-fetch": "^1.6.3",
     "nodemon": "^1.11.0"
   },
   "devDependencies": {
+    "jasmine": "^2.5.3",
     "reload": "^1.1.1"
   }
 }
