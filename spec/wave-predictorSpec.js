@@ -1,16 +1,27 @@
-var JasmineConsoleReporter = require('jasmine-console-reporter');
-var reporter = new JasmineConsoleReporter({
-    colors: 1,           // (0|false)|(1|true)|2
-    cleanStack: 1,       // (0|false)|(1|true)|2|3
-    verbosity: 4,        // (0|false)|1|2|(3|true)|4
-    listStyle: 'indent', // "flat"|"indent"
-    activity: false
-});
+var wavePredictor = require('../app/js/wave-predictor');
 
 describe('It can predict the best surf spot', function() {
   describe('It has basic fuctionality', function() {
     it('Can test for true', function() {
       expect(true).toBe(true);
-    })
+    });
   });
+  describe('It can acess the correct module', function() {
+    const sampleData = [
+      {
+        foo: 'foo'
+      },
+      {
+        wind: {
+          direction: 144
+        }
+      }
+    ];
+    it('Can access sample data', function() {
+      expect(sampleData).toBeTruthy(null);
+    });
+    it('Can use the right function', function() {
+      expect(wavePredictor(sampleData)).toEqual('If the winds are low, you may go.');
+    })
+  })
 });
