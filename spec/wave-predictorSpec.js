@@ -67,7 +67,7 @@ describe('The forecasting algorithm works for forecasts with', function() {
         });
 
         it('has medium waves', function() {
-          data[1].swell.components.combined.height = 3.5;
+          data[1].swell.components.combined.height = 3;
           expect(wavePredictor(data)).toEqual('Rockaway Beach');
         });
 

@@ -15,18 +15,11 @@ module.exports = function(forecast) {
   json[1].condition.weather
   */
 
-  if (current.wind.direction > 270 || current.wind.direction < 90) {
-    if (current.wind.speed >= 10) {
-      return 'Stay home';
-    } else {
-      if (current.swell.components.combined.period <= 7) {
-        if (current.swell.components.combined.height < 2
-        && curren.swell.component) {
-          return null;
-        }
-      }
+  if (windDirection > 270 || windDirection < 90) {
+    if (windSpeed < 10) {
+
     }
   }
 
-  return 'foo';
+  return 'Stay home.'
 }
