@@ -21,20 +21,25 @@ let data = [
   }
 ];
 
+/*
 json[1].swell.components.combined.height
 json[1].swell.components.combined.period
 json[1].wind.speed
 json[1].wind.direction
 json[1].condition.temperature
 json[1].condition.weather
+*/
 
 
-
-describe('It can predict the best surf spot', function() {
-  describe('It has basic fuctionality', function() {
-    it('Can test for true', function() {
+describe('The wave-predictor module', function() {
+    it('can test for true', function() {
       expect(true).toBe(true);
+    it('is a function', function() {
+      expect(typeof wave-predictor).toBe('function');
     });
+    it('has a valid data set', function() {
+      expect(data).toBeDefined();
+    })
   });
   describe('It can acess the correct module', function() {
     const sampleData = [
