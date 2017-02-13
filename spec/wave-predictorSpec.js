@@ -55,7 +55,7 @@ describe('The forecasting algorithm works for forecasts with', function() {
       expect(wavePredictor(data)).toEqual('Stay home');
     });
 
-    xdescribe('blowing gently,', function() {
+    describe('blowing gently,', function() {
       data[1].wind.speed = 5;
 
       describe('short-period waves,', function() {
