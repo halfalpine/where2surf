@@ -17,9 +17,14 @@ module.exports = function(forecast) {
 
   if (windDirection > 270 || windDirection < 90) {
     if (windSpeed < 10) {
-
+      if (period === 7) {
+        if (height >= 3) {
+          return 'Rockaway Beach';
+        }
+      } else if (period > 7 && period ) {
     }
   }
 
-  return 'Stay home.'
+  console.log(height, period, windDirection, windSpeed);
+  return 'Stay home';
 }
