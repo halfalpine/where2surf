@@ -58,7 +58,7 @@ describe('The forecasting algorithm works for forecasts with', function() {
     describe('blowing gently,', function() {
       data[1].wind.speed = 5;
 
-      describe('short-period waves,', function() {
+      describe('short-period swell,', function() {
         data[1].swell.components.combined.period = 7;
 
         it('has small waves', function() {
