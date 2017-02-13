@@ -2,11 +2,20 @@ module.exports = function(forecast) {
 
   const current = forecast[1];
 
-  if (current.wind.direction >= 247.5 && current.wind.direction < 315) {
-    return '67th St, Rockaway Beach';
-  } else if (current.wind.direction >= 315 || current.wind.direction < 90) {
-    return 'Long Beach';
-  } else {
-    return 'If the winds are low, you may go.';
+  /*
+  json[1].swell.components.combined.height
+  json[1].swell.components.combined.period
+  json[1].wind.direction
+  json[1].condition.temperature
+  json[1].condition.weather
+  */
+  console.log(current.wind.direction, current.wind.speed);
+
+  if (current.wind.direction > 270 || current.wind.direction < 90) {
+    if (current.wind.speed >= 10) {
+      return 'Stay home';
+    }
   }
+
+  return 'foo';
 }
