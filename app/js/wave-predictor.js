@@ -22,9 +22,10 @@ module.exports = function(forecast) {
           return 'Rockaway Beach';
         }
       } else if (period > 7 && period ) {
+        return height;
+      }
     }
   }
 
-  console.log(height, period, windDirection, windSpeed);
   return 'Stay home';
-}
+};
