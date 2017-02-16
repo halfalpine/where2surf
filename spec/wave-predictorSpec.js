@@ -58,6 +58,11 @@ describe('The forecasting algorithm works for forecasts with', function() {
     describe('blowing gently,', function() {
       data[1].wind.speed = 5;
 
+      it('has very short-period swell', function() {
+        data[1].swell.components.combined.period = 6;
+        expect(wavePredictor(data)).toEqual('Stay home')
+      });
+
       describe('short-period swell,', function() {
         data[1].swell.components.combined.period = 7;
 
