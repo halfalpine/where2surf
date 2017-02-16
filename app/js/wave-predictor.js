@@ -14,11 +14,12 @@ module.exports = function(forecast) {
   json[1].condition.temperature
   json[1].condition.weather
   */
+  console.log('period', period, 'height', height, 'direction', windDirection, 'speed', windSpeed)
 
   if (windDirection > 270 || windDirection < 90) {
     if (windSpeed < 10) {
       if (period === 7) {
-        if (height >= 3) {
+        if (height === 3) {
           return 'Rockaway Beach';
         }
       } else if (period > 7 && period ) {
