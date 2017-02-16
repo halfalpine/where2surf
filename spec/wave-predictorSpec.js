@@ -1,7 +1,7 @@
 const wavePredictor = require('../app/js/wave-predictor');
 //const data = require('./data/sample.json');
-const data = function(height = 0, period = 0, windDirection = 0, windSpeed = 0) {
-  const forecastObj = [
+const forecastObj = function(height, period, windSpeed, windDirection) {
+  const forecast = [
     {},
     {
       swell: {
@@ -22,7 +22,7 @@ const data = function(height = 0, period = 0, windDirection = 0, windSpeed = 0) 
       }
     }
   ];
-  return forecastObj;
+  return forecast;
 };
 
 /*let data = [
@@ -76,15 +76,22 @@ describe('The wave-predictor module', function() {
   it('is a function', function() {
     expect(wavePredictor).toEqual(jasmine.any(Function));
   });
-  it('has a valid data set', function() {
+  xit('has a valid data set', function() {
     expect(data).toBeDefined();
   });
   it('returns a string', function() {
+    const forecast = {
+      period: null,
+      height: null,
+      windSpeed: null,
+      windDirection: null
+    };
+    const data = forecastObj(...forecast);
     expect(wavePredictor(data)).toEqual(jasmine.any(String));
   });
 });
 
-xdescribe('The forecasting algorithm works for forecasts with', function() {
+describe('The forecasting algorithm works for forecasts with', function() {
 
   describe('a south wind,', function() {
     data[1].wind.direction = 0;
@@ -94,7 +101,7 @@ xdescribe('The forecasting algorithm works for forecasts with', function() {
       expect(wavePredictor(data)).toEqual('Stay home');
     });
 
-    describe('blowing gently,', function() {
+    xdescribe('blowing gently,', function() {
       data[1].wind.speed = 5;
 
       it('has very short-perod swell', function() {
