@@ -22,6 +22,7 @@ module.exports = function(forecast) {
       }
     }
   }
+
   console.log(height, period, windDirection, windSpeed);
   return 'Stay home';
 };
