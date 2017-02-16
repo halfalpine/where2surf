@@ -29,7 +29,6 @@ json[1].condition.temperature
 json[1].condition.weather
 */
 
-
 describe('The wave-predictor module', function() {
   it('can test for true', function() {
     expect(true).toBe(true);
@@ -58,9 +57,11 @@ describe('The forecasting algorithm works for forecasts with', function() {
     describe('blowing gently,', function() {
       data[1].wind.speed = 5;
 
-      it('has very short-period swell', function() {
-        data[1].swell.components.combined.period = 6;
-        expect(wavePredictor(data)).toEqual('Stay home');
+      describe('has very short-period swell', function() {
+        it('isn\'t good for surfing', function() {
+          data[1].swell.components.combined.period = 6;
+          expect(wavePredictor(data)).toEqual('Stay home');
+        });
       });
 
       describe('short-period swell,', function() {
@@ -73,6 +74,7 @@ describe('The forecasting algorithm works for forecasts with', function() {
 
         it('has medium waves', function() {
           data[1].swell.components.combined.height = 3;
+          console.log('data', data[1].swell.components.combined);
           expect(wavePredictor(data)).toEqual('Rockaway Beach');
         });
 
