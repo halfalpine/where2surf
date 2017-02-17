@@ -1,5 +1,5 @@
 const wavePredictor = require('../app/js/wave-predictor');
-const apiHelper = function(period, height, direction, speed) {
+const apiHelper = function({period, height, direction, speed} = {}) {
   const apiObject = [
     {},
     {
@@ -38,19 +38,34 @@ describe('Wave predictor', function() {
     describe('blowing softly', function() {
 
       it('has a very short period', function() {
-        const data = apiHelper(6, 5, 0, 5);
+        const data = apiHelper({
+          period: 6,
+          heght: 5,
+          direction: 0,
+          speed: 5
+        });
         expect(wavePredictor(data)).toMatch(/Stay home/);
       });
 
       describe('short period', function() {
 
         it('has small waves', function() {
-          const data = apiHelper(7, 2, 0, 5);
+          const data = apiHelper({
+            period: 7,
+            height: 2,
+            direction: 0,
+            speed: 5
+          });
           expect(wavePredictor(data)).toMatch(/Stay home/);
         });
 
         it('has medium waves', function() {
-          const data = apiHelper(7, 3, 0, 5);
+          const data = apiHelper({
+            period: 7,
+            height: 3,
+            direction: 0,
+            speed: 5
+          });
           expect(wavePredictor(data)).toMatch(/Rockaway Beach/);
         });
       });
