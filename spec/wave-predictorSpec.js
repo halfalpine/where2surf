@@ -1,7 +1,6 @@
 const wavePredictor = require('../app/js/wave-predictor');
-//const data = require('./data/sample.json');
-const forecastObj = function(height, period, windSpeed, windDirection) {
-  const forecast = [
+const apiHelper = function({period, height, direction, speed} = {}) {
+  const apiObject = [
     {},
     {
       swell: {
@@ -13,129 +12,78 @@ const forecastObj = function(height, period, windSpeed, windDirection) {
         }
       },
       wind: {
-        speed: windSpeed,
-        direction: windDirection
-      },
-      condition: {
-        temperature: null,
-        weather: null
+        speed: speed,
+        direction: direction
       }
     }
   ];
-  return forecast;
+  return apiObject;
 };
 
-/*let data = [
-{},
-{
-swell: {
-components: {
-combined: {
-height: null,
-period: null
-}
-}
-},
-wind: {
-speed: null,
-direction: null
-},
-condition: {
-temperature: null,
-weather: null
-}
-}
-];
-*/
-
-//const waveData = function() {};
-/*
-json[1].swell.components.combined.height
-json[1].swell.components.combined.period
-json[1].wind.direction
-json[1].condition.temperature
-json[1].condition.weather
-*/
-
 describe('The wave-predictor module', function() {
+
   it('can test for true', function() {
     expect(true).toBe(true);
   });
+
   it('is a function', function() {
     expect(wavePredictor).toEqual(jasmine.any(Function));
   });
-  xit('has a valid data set', function() {
-    expect(forecastObj).toBeDefined();
-  });
-  it('returns a string', function() {
-    const forecast = {
-      period: null,
-      height: null,
-      windSpeed: null,
-      windDirection: null
-    };
-    const data = forecastObj(forecast);
-    expect(wavePredictor(data)).toEqual(jasmine.any(String));
-  });
 });
 
-describe('The forecasting algorithm works for forecasts with', function() {
+describe('Wave predictor', function() {
 
-  describe('a south wind,', function() {
+  describe('for south winds', function() {
 
-    it('blowing hard', function() {
-      const forecast = {
-        period: null,
-        height: null,
-        windSpeed: 10,
-        windDirection: 0
-      };
-      const data = forecastObj(forecast);
-      expect(wavePredictor(data)).toEqual('Stay home');
-    });
+    describe('blowing softly', function() {
 
-    describe('blowing gently,', function() {
-
-      it('has very short-perod swell', function() {
-        const forecast = {
+      it('has a very short period', function() {
+        const data = apiHelper({
           period: 6,
-          height: null,
-          windSpeed: 5,
-          windDirection: 0
-        };
-        const data = forecastObj(forecast);
-        expect(wavePredictor(data)).toEqual('Stay home');
+          heght: 5,
+          direction: 0,
+          speed: 5
+        });
+        expect(wavePredictor(data)).toMatch(/Stay home/);
       });
 
-      describe('short-period swell,', function() {
+      describe('short period', function() {
 
         it('has small waves', function() {
-          const forecast = {
+          const data = apiHelper({
             period: 7,
             height: 2,
-            windSpeed: 5,
-            windDirection: 0
-          };
-          const data = forecastObj(forecast);
-          expect(wavePredictor(data)).toEqual('Stay home');
+            direction: 0,
+            speed: 5
+          });
+          expect(wavePredictor(data)).toMatch(/Stay home/);
         });
 
         it('has medium waves', function() {
-          const forecast = {
+          const data = apiHelper({
             period: 7,
             height: 3,
-            windSpeed: 5,
-            windDirection: 0
-          };
-          const data = forecastObj(forecast);
-          expect(wavePredictor(data)).toEqual('Rockaway Beach');
-        });
-
-        xit('has large waves', function() {
-          // expect(wavePredictor(data)).toEqual('Long Beach');
+            direction: 0,
+            speed: 5
+          });
+          expect(wavePredictor(data)).toMatch(/Rockaway Beach/);
         });
       });
+
     });
+  });
+});
+
+describe('a sample test', function() {
+
+  it('returns a string', function() {
+    const data = apiHelper(5, 10, 15, 20);
+    expect(wavePredictor(data)).toEqual(jasmine.any(String));
+  });
+
+  it('uses the new format', function() {
+    const data = apiHelper(5, 10, 15, 20);
+    expect(wavePredictor(data)).toMatch(/Stay home/);
   });
 
 });
