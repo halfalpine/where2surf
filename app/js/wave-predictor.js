@@ -1,11 +1,9 @@
 module.exports = function(forecast) {
 
-  const current = forecast[1];
-
-  const height = current.swell.components.combined.height;
-  const period = current.swell.components.combined.period;
-  const windDirection = current.wind.direction;
-  const windSpeed = current.wind.speed;
+  const height = forecast[1].swell.components.combined.height;
+  const period = forecast[1].swell.components.combined.period;
+  const windDirection = forecast[1].wind.direction;
+  const windSpeed = forecast[1].wind.speed;
 
   /*
   json[1].swell.components.combined.height
@@ -21,8 +19,6 @@ module.exports = function(forecast) {
         if (height == 3) {
           return 'Rockaway Beach';
         }
-      } else if (period > 7 && period ) {
-        return height;
       }
     }
   }

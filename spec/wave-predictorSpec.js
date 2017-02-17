@@ -1,5 +1,5 @@
 const wavePredictor = require('../app/js/wave-predictor');
-const data = [
+//const data = [
   {},
   {
     swell: {
@@ -34,12 +34,22 @@ describe('The wave-predictor module', function() {
   it('can test for true', function() {
     expect(true).toBe(true);
   });
-  
+
   it('is a function', function() {
     expect(wavePredictor).toEqual(jasmine.any(Function));
   });
 
   it('returns a string', function() {
     expect(wavePredictor(data)).toEqual(jasmine.any(String));
+  });
+
+  it('works for the the required format', function() {
+    const data = {
+      period: null,
+      height: null,
+      direction: null,
+      speed: null
+    };
+    expect(wavePredictor())
   });
 });
