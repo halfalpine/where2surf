@@ -1,25 +1,4 @@
 const wavePredictor = require('../app/js/wave-predictor');
-//const data = [
-  {},
-  {
-    swell: {
-      components: {
-        combined: {
-          height: null,
-          period: null
-        }
-      }
-    },
-    wind: {
-      speed: null,
-      direction: null
-    },
-    condition: {
-      temperature: null,
-      weather: null
-    }
-  }
-];
 
 /*
 json[1].swell.components.combined.height
@@ -39,17 +18,49 @@ describe('The wave-predictor module', function() {
     expect(wavePredictor).toEqual(jasmine.any(Function));
   });
 
-  it('returns a string', function() {
+  xit('returns a string', function() {
     expect(wavePredictor(data)).toEqual(jasmine.any(String));
   });
+});
 
-  it('works for the the required format', function() {
-    const data = {
-      period: null,
-      height: null,
-      direction: null,
-      speed: null
-    };
-    expect(wavePredictor())
+describe('Wave predictor', function() {
+  const data = [
+    {},
+    {
+      swell: {
+        components: {
+          combined: {
+            height: null,
+            period: null
+          }
+        }
+      },
+      wind: {
+        speed: null,
+        direction: null
+      }
+    }
+  ];
+
+  describe('for south winds', function() {
+    data[1].wind.direction = 0;
+
+    it('sets variables', function() {
+      expect(data[1].wind.direction).toEqual(0);
+    });
+
+    it('works with high winds', function() {
+      data[1].wind.speed = 10;
+      expect(data[1].wind.speed).toEqual(10);
+      expect(wavePredictor(data)).toMatch(/Stay home/);
+    });
+
+    describe('blowing softly', function() {
+
+      it('renames the variable correctly', function() {
+        data[1].wind.speed = 5;
+        expect(data[1].wind.speed).toEqual(5);
+      });
+    });
   });
 });
