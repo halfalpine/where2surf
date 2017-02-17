@@ -19,13 +19,6 @@ const apiHelper = function(period, height, direction, speed) {
   ];
   return apiObject;
 };
-/*
-json[1].swell.components.combined.height
-json[1].swell.components.combined.period
-json[1].wind.direction
-json[1].condition.temperature
-json[1].condition.weather
-*/
 
 describe('The wave-predictor module', function() {
 
