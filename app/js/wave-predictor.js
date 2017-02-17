@@ -8,7 +8,7 @@ module.exports = function(forecast) {
   if (windDirection > 270 || windDirection < 90) {
     if (windSpeed < 10) {
       if (period > 6) {
-        if (height == 3) {
+        if (height >= 3) {
           return 'Rockaway Beach';
         }
       }

@@ -29,6 +29,7 @@ describe('The wave-predictor module', function() {
   it('is a function', function() {
     expect(wavePredictor).toEqual(jasmine.any(Function));
   });
+
 });
 
 describe('Wave predictor', function() {
@@ -63,6 +64,16 @@ describe('Wave predictor', function() {
           const data = apiHelper({
             period: 7,
             height: 3,
+            direction: 0,
+            speed: 5
+          });
+          expect(wavePredictor(data)).toMatch(/Rockaway Beach/);
+        });
+
+        it('has large waves', function() {
+          const data = apiHelper({
+            period: 7,
+            height: 5,
             direction: 0,
             speed: 5
           });
