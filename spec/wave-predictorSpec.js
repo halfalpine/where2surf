@@ -38,16 +38,27 @@ describe('The wave-predictor module', function() {
   });
 });
 
-xdescribe('Wave predictor', function() {
+describe('Wave predictor', function() {
 
   describe('for south winds', function() {
 
     describe('blowing softly', function() {
 
+      it('has a very short period', function() {
+        const data = apiHelper(6, 5, 0, 5);
+        expect(wavePredictor(data)).toMatch(/Stay home/);
+      });
+
       describe('short period', function() {
 
         it('has small waves', function() {
+          const data = apiHelper(7, 2, 0, 5);
+          expect(wavePredictor(data)).toMatch(/Stay home/);
+        });
 
+        it('has medium waves', function() {
+          const data = apiHelper(7, 3, 0, 5);
+          expect(wavePredictor(data)).toMatch(/Rockaway Beach/);
         });
       });
 
