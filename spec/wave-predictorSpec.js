@@ -32,6 +32,20 @@ describe('The wave-predictor module', function() {
 
 });
 
+describe('a sample test', function() {
+
+  it('returns a string', function() {
+    const data = apiHelper(5, 10, 15, 20);
+    expect(wavePredictor(data)).toEqual(jasmine.any(String));
+  });
+
+  it('uses the new format', function() {
+    const data = apiHelper(5, 10, 15, 20);
+    expect(wavePredictor(data)).toMatch(/Stay home/);
+  });
+
+});
+
 describe('Wave predictor', function() {
 
   describe('for south winds', function() {
@@ -81,20 +95,39 @@ describe('Wave predictor', function() {
         });
       });
 
+      describe('medium period', function() {
+
+        it('has small waves', function() {
+          const data = apiHelper({
+            period: 9,
+            height: 2,
+            direction: 0,
+            speed: 5
+          });
+          expect(wavePredictor(data)).toMatch(/Rockaway Beach/);
+        });
+
+        it('has medium waves', function() {
+          const data = apiHelper({
+            period: 9,
+            height: 3,
+            direction: 0,
+            speed: 5
+          });
+          expect(wavePredictor(data)).toMatch(/Long Beach/);
+        });
+
+        it('has large waves', function() {
+          const data = apiHelper({
+            period: 9,
+            height: 5,
+            direction: 0,
+            speed: 5
+          });
+          expect(wavePredictor(data)).toMatch(/Long Beach/);
+        });
+        
+      });
     });
   });
-});
-
-describe('a sample test', function() {
-
-  it('returns a string', function() {
-    const data = apiHelper(5, 10, 15, 20);
-    expect(wavePredictor(data)).toEqual(jasmine.any(String));
-  });
-
-  it('uses the new format', function() {
-    const data = apiHelper(5, 10, 15, 20);
-    expect(wavePredictor(data)).toMatch(/Stay home/);
-  });
-
 });
