@@ -7,7 +7,7 @@ module.exports = function(forecast) {
 
 // Flow control for S wind
   // In the MSW API, compass points are opposite (+/- 180)
-  if (windDirection > 270 || windDirection < 90) {
+  if (windDirection > 247.5 - 180 || windDirection <= 270) {
     if (windSpeed < 10) {
       if (period > 6 && period < 9) {
         if (height >= 3) {
@@ -35,7 +35,15 @@ module.exports = function(forecast) {
     if (windSpeed < 10) {
       if (period >= 7 && period < 9) {
         if (height >= 3 && height < 4) {
-          return '';
+          return 'Rockaway Beach';
+        } else if (height >= 4) {
+          return 'Long Beach';
+        }
+      } else if (period >= 9 && period < 11) {
+        if (height >= 3 && height < 5) {
+          return 'Rockaway Beach';
+        } else if (height <= 5) {
+          return 'Long Beach';
         }
       }
     }
