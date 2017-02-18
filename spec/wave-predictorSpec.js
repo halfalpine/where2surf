@@ -516,4 +516,131 @@ describe('Wave predictor', function() {
 
   });
 
+  describe('for north winds', function() {
+
+    it('has a very short period', function() {
+      const data = apiHelper({
+        period: 6,
+        heght: 5,
+        direction: 180,
+        speed: 5
+      });
+      expect(wavePredictor(data)).toMatch(/Stay home/);
+    });
+
+    describe('short period', function() {
+
+      it('has small waves', function() {
+        const data = apiHelper({
+          period: 7,
+          height: 2,
+          direction: 180,
+          speed: 5
+        });
+        expect(wavePredictor(data)).toMatch(/Stay home/);
+      });
+
+      it('has medium waves', function() {
+        const data = apiHelper({
+          period: 7,
+          height: 3,
+          direction: 180,
+          speed: 5
+        });
+        expect(wavePredictor(data)).toMatch(/Rockaway Beach/);
+      });
+
+      it('has large waves', function() {
+        const data = apiHelper({
+          period: 7,
+          height: 5,
+          direction: 180,
+          speed: 5
+        });
+        expect(wavePredictor(data)).toMatch(/Rockaway Beach/);
+      });
+    });
+
+    describe('medium period', function() {
+
+      it('has small waves', function() {
+        const data = apiHelper({
+          period: 9,
+          height: 2,
+          direction: 180,
+          speed: 5
+        });
+        expect(wavePredictor(data)).toMatch(/Rockaway Beach/);
+      });
+
+      it('has medium waves', function() {
+        const data = apiHelper({
+          period: 9,
+          height: 3,
+          direction: 180,
+          speed: 5
+        });
+        expect(wavePredictor(data)).toMatch(/Long Beach/);
+      });
+
+      it('has large waves', function() {
+        const data = apiHelper({
+          period: 9,
+          height: 5,
+          direction: 180,
+          speed: 5
+        });
+        expect(wavePredictor(data)).toMatch(/Long Beach/);
+      });
+
+    });
+
+    describe('long period', function() {
+
+      it('has small waves', function() {
+        const data = apiHelper({
+          period: 11,
+          height: 2,
+          direction: 180,
+          speed: 5
+        });
+        expect(wavePredictor(data)).toMatch(/Long Beach/);
+      });
+
+      it('has medium waves', function() {
+        const data = apiHelper({
+          period: 11,
+          height: 3,
+          direction: 180,
+          speed: 5
+        });
+        expect(wavePredictor(data)).toMatch(/Long Beach/);
+      });
+
+      it('has large waves', function() {
+        const data = apiHelper({
+          period: 11,
+          height: 5,
+          direction: 180,
+          speed: 5
+        });
+        expect(wavePredictor(data)).toMatch(/Jacob Riis/);
+      });
+
+    });
+
+    describe('very long period', function() {
+
+      it('has big enough waves', function() {
+        const data = apiHelper({
+          period: 13,
+          height: 5,
+          direction: 180,
+          speed: 5
+        });
+        expect(wavePredictor(data).toMatch(/Democrat Point/));
+      });
+    });
+  });
+
 });
