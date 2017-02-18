@@ -11,7 +11,7 @@ module.exports = function(forecast) {
         if (height >= 3) {
           return 'Rockaway Beach';
         }
-      } else if (period >= 9) {
+      } else if (period >= 9 && period < 11) {
         if (height >= 3 ) {
           return 'Long Beach';
         } else if (height >= 2) {

@@ -126,8 +126,44 @@ describe('Wave predictor', function() {
           });
           expect(wavePredictor(data)).toMatch(/Long Beach/);
         });
-        
+
       });
+
+      describe('long period', function() {
+
+        it('has small waves', function() {
+          const data = apiHelper({
+            period: 11,
+            height: 2,
+            direction: 0,
+            speed: 5
+          });
+          expect(wavePredictor(data)).toMatch(/Rockaway Beach/);
+        });
+
+        it('has medium waves', function() {
+          const data = apiHelper({
+            period: 11,
+            height: 3,
+            direction: 0,
+            speed: 5
+          });
+          expect(wavePredictor(data)).toMatch(/Long Beach/);
+        });
+
+        it('has large waves', function() {
+          const data = apiHelper({
+            period: 11,
+            height: 5,
+            direction: 0,
+            speed: 5
+          });
+          expect(wavePredictor(data)).toMatch(/Long Beach/);
+        });
+
+      });
+
+
     });
   });
 });
