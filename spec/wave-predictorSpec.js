@@ -284,7 +284,7 @@ describe('Wave predictor', function() {
 
     });
 
-    describe('blowing moderately', function() {
+    xdescribe('blowing moderately', function() {
 
       it('has a very short period', function() {
         const data = apiHelper({
@@ -399,7 +399,7 @@ describe('Wave predictor', function() {
 
     });
 
-    describe('blowing hard', function() {
+    xdescribe('blowing hard', function() {
 
       it('has a very short period', function() {
         const data = apiHelper({
