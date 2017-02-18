@@ -399,7 +399,7 @@ describe('Wave predictor', function() {
 
     });
 
-    xdescribe('blowing hard', function() {
+    describe('blowing hard', function() {
 
       it('has a very short period', function() {
         const data = apiHelper({

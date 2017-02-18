@@ -74,6 +74,24 @@ module.exports = function(forecast) {
           return 'Jacob Riis';
         }
       }
+    } else if (windSpeed >= 18 && windSpeed < 32) {
+      if (period >= 7 && period < 9) {
+        if (height >= 5) {
+          return 'Rockaway Beach';
+        }
+      } else if (period >= 9 && period < 11) {
+        if (height >= 3 && height < 5) {
+          return 'Rockaway Beach';
+        } else if (height >= 5) {
+          return 'Long Beach';
+        }
+      } else if (period >= 11) {
+        if (height >= 3 && height < 5) {
+          return 'Rockaway Beach';
+        } else if (height >= 5) {
+          return 'Jacob Riis';
+        }
+      }
     }
   }
 
