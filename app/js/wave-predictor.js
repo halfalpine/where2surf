@@ -32,12 +32,32 @@ module.exports = function(forecast) {
 // Flow control for W wind
   // In the MSW API, compass points are opposite (+/- 180)
   if (windDirection >= 247.5 - 180 && windDirection < 337.5 - 180) {
-    if (windSpeed < 10) {
+    if (windSpeed < 8) {
       if (period >= 7 && period < 9) {
         if (height >= 3 && height < 5) {
           return 'Rockaway Beach';
         } else if (height >= 5) {
           return 'Long Beach';
+        }
+      } else if (period >= 9 && period < 11) {
+        if (height >= 3 && height < 5) {
+          return 'Rockaway Beach';
+        } else if (height >= 5) {
+          return 'Long Beach';
+        }
+      } else if (period >= 11) {
+        if (height >= 2 && height < 3) {
+          return 'Rockaway Beach';
+        } else if (height >= 3 && height < 5) {
+          return 'Long Beach';
+        } else if (height >= 5) {
+          return 'Jacob Riis';
+        }
+      }
+    } else if (windSpeed >= 8 && windSpeed < 16) {
+      if (period >= 7 && period < 9) {
+        if (height >= 3) {
+          return 'Rockaway Beach';
         }
       } else if (period >= 9 && period < 11) {
         if (height >= 3 && height < 5) {
