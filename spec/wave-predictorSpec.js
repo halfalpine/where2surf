@@ -138,7 +138,7 @@ describe('Wave predictor', function() {
             direction: 0,
             speed: 5
           });
-          expect(wavePredictor(data)).toMatch(/Rockaway Beach/);
+          expect(wavePredictor(data)).toMatch(/Long Beach/);
         });
 
         it('has medium waves', function() {
@@ -158,7 +158,7 @@ describe('Wave predictor', function() {
             direction: 0,
             speed: 5
           });
-          expect(wavePredictor(data)).toMatch(/Long Beach/);
+          expect(wavePredictor(data)).toMatch(/Jacob Riis/);
         });
 
       });

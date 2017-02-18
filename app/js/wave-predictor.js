@@ -5,6 +5,7 @@ module.exports = function(forecast) {
   const windDirection = forecast[1].wind.direction;
   const windSpeed = forecast[1].wind.speed;
 
+// Flow control for S wind
   if (windDirection > 270 || windDirection < 90) {
     if (windSpeed < 10) {
       if (period > 6 && period < 9) {
@@ -16,6 +17,12 @@ module.exports = function(forecast) {
           return 'Long Beach';
         } else if (height >= 2) {
           return 'Rockaway Beach';
+        }
+      } else if (period >= 11) {
+        if (height > 1.5 && height < 5) {
+          return 'Long Beach';
+        } else if (height >= 5) {
+          return 'Jacob Riis';
         }
       }
     }
