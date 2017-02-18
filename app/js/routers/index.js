@@ -1,10 +1,8 @@
-// The purpose of 'home' is to ping the server and
 require('dotenv').config();
 let express = require('express');
 let router = express.Router();
- let fetch = require('node-fetch');
-let wavePredictor = require('./wave-predictor.js');
-
+let fetch = require('node-fetch');
+let wavePredictor = require('../wave-predictor.js');
 
 router.get('/', function(req, res) {
   const API_KEY = process.env.MSW_KEY;
