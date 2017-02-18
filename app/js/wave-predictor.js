@@ -95,5 +95,29 @@ module.exports = function(forecast) {
     }
   }
 
+  // Flow control for N wind
+    // In the MSW API, compass points are opposite (+/- 180)
+    if (windDirection >= 337.5 - 180 && windDirection < 90 + 180) {
+      if (period >= 13 && height >= 4) {
+        return 'Democrat Point';
+      } else if (period >= 7 && period < 9) {
+        if (height >= 3) {
+          return 'Rockaway Beach';
+        }
+      } else if (period >= 9 && period < 11) {
+        if (height >= 2 && height < 3) {
+          return 'Rockaway Beach';
+        } else if (height >= 3) {
+          return 'Long Beach';
+        }
+      } else if (period >= 11) {
+        if (height >= 5) {
+          return 'Jacob Riis';
+        } else {
+          return 'Long Beach';
+        }
+      }
+    }
+
   return 'Stay home';
 };

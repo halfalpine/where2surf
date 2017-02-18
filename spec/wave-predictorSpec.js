@@ -638,7 +638,7 @@ describe('Wave predictor', function() {
           direction: 180,
           speed: 5
         });
-        expect(wavePredictor(data).toMatch(/Democrat Point/));
+        expect(wavePredictor(data)).toMatch(/Democrat Point/);
       });
     });
   });
