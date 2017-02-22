@@ -10,9 +10,8 @@ app.set('views', 'app/views');
 
 app.use(require('./js/routers/index'));
 
-getForecast.then(function(data) {
-  console.log(data);
-});
+getForecast.then(data => console.log({data: data}))
+.catch(err => console.warn({error2: err}))
 
 app.listen(app.get('port'), function() {
   console.log(`Now serving on port ${app.get('port')}`);
