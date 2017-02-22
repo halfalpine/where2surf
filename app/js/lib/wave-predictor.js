@@ -1,14 +1,12 @@
 module.exports = function(forecast) {
-
-  const height = forecast[1].swell.components.combined.height;
-  const period = forecast[1].swell.components.combined.period;
-  const windDirection = forecast[1].wind.direction;
-  const windSpeed = forecast[1].wind.speed;
+  const { direction, speed } = forecast[1].wind;
+  const { height, period } = forecast[1].swell.components.combined;
+  // console.log({direction, speed, height, period});
 
 // Flow control for S wind
   // In the MSW API, compass points are opposite (+/- 180)
-  if (windDirection < 247.5 - 180 || windDirection >= 270) {
-    if (windSpeed < 10) {
+  if (direction < 247.5 - 180 || direction >= 270) {
+    if (speed < 10) {
       if (period >= 7 && period < 9) {
         if (height >= 3) {
           return 'Rockaway Beach';
@@ -31,8 +29,8 @@ module.exports = function(forecast) {
 
 // Flow control for W wind
   // In the MSW API, compass points are opposite (+/- 180)
-  if (windDirection >= 247.5 - 180 && windDirection < 337.5 - 180) {
-    if (windSpeed < 8) {
+  if (direction >= 247.5 - 180 && direction < 337.5 - 180) {
+    if (speed < 8) {
       if (period >= 7 && period < 9) {
         if (height >= 3 && height < 5) {
           return 'Rockaway Beach';
@@ -54,7 +52,7 @@ module.exports = function(forecast) {
           return 'Jacob Riis';
         }
       }
-    } else if (windSpeed >= 8 && windSpeed < 16) {
+    } else if (speed >= 8 && speed < 16) {
       if (period >= 7 && period < 9) {
         if (height >= 3) {
           return 'Rockaway Beach';
@@ -74,7 +72,7 @@ module.exports = function(forecast) {
           return 'Jacob Riis';
         }
       }
-    } else if (windSpeed >= 18 && windSpeed < 32) {
+    } else if (speed >= 18 && speed < 32) {
       if (period >= 7 && period < 9) {
         if (height >= 5) {
           return 'Rockaway Beach';
@@ -97,7 +95,7 @@ module.exports = function(forecast) {
 
   // Flow control for N wind
     // In the MSW API, compass points are opposite (+/- 180)
-    if (windDirection >= 337.5 - 180 && windDirection < 90 + 180) {
+    if (direction >= 337.5 - 180 && direction < 90 + 180) {
       if (period >= 13 && height >= 4) {
         return 'Democrat Point';
       } else if (period >= 7 && period < 9) {

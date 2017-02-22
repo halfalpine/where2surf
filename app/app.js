@@ -1,8 +1,7 @@
 require('dotenv').config();
-let express = require('express');
-let app = express();
-let fetch = require('node-fetch');
-let getForecast = require('./js/lib/forecast');
+const express = require('express');
+const app = express();
+const fetchForecast = require('./js/lib/forecast');
 
 app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'ejs');
@@ -10,8 +9,14 @@ app.set('views', 'app/views');
 
 app.use(require('./js/routers/index'));
 
-getForecast.then(data => console.log({data: data}))
-.catch(err => console.warn({error2: err}))
+//Call initially and recursively call at set interval delay;
+const delay = 3000;
+
+(function getDestination() {
+  fetchForecast.then(data => console.log(data));
+  setInterval(getDestination, delay);
+})();
+
 
 app.listen(app.get('port'), function() {
   console.log(`Now serving on port ${app.get('port')}`);
