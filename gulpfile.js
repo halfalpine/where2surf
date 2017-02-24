@@ -1,7 +1,23 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var ejs = require('gulp-ejs');
+var nodemon = require('gulp-nodemon');
+var livereload = require('gulp-livereload');
+var notify = require('gulp-notify');
 var browserSync = require('browser-sync');
 var runSequence = require('run-sequence');
+
+var nodemonServerInit = function(){
+        livereload.listen();
+        nodemon({
+            script: 'app.js',
+            ext: 'js'
+        }).on('restart', function(){
+            gulp.src('app.js')
+                .pipe(livereload())
+                .pipe(notify('Reloading page, please wait...'));
+        })
+};
 
 gulp.task('browserSync', function() {
   browserSync({
@@ -9,6 +25,14 @@ gulp.task('browserSync', function() {
       baseDir: 'app'
     }
   });
+});
+
+gulp.task('ejs', function() {
+  return gulp.src('app/views/**/*.ejs')
+  .pipe(ejs({
+    msg: 'Hello Gulp!'
+  }))
+  .pipe(gulp.dest('./public'));
 });
 
 gulp.task('sass', function() {
@@ -22,12 +46,11 @@ gulp.task('sass', function() {
 
 gulp.task('watch', function() {
   gulp.watch('app/sass/**/*.sass', ['sass']);
-  gulp.watch('app/*.html', browserSync.reload);
+  gulp.watch('app/views/**/*.ejs', browserSync.reload);
   gulp.watch('app/js/**/*.js', browserSync.reload);
 });
 
-gulp.task('default', function(callback) {
-  runSequence(['sass', 'browserSync'], 'watch',
-    callback
-  );
+gulp.task('default', function(cb) {
+  runSequence(['nodemon', 'ejs', 'sass', 'browserSync', 'watch'],
+  cb);
 });

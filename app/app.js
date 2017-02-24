@@ -20,34 +20,11 @@ app.use(require('./js/routers/index'));
 // Call initially and recursively call at set interval delay;
 const delay = 3600000;
 
-// .then(res => res.json())
-// .then(data => wavePredictor(data))
-// .then(data => console.log(data))
-
 fetch(MSW_URL)
   .then(res => res.json())
   .then(json => wavePredictor(json))
-  .then(str => app.locals.dest = str);
-  // .then(function(x) {
-  //   foo = x;
-  //   console.log(foo);
-  //   app.locals.dest = foo;
-
-
-// (function getDestination() {
-//   fetch(MSW_URL)
-//     .then(res => res.json())
-//     .then(json => wavePredictor(json))
-//     .then(string => console.log(string))
-//     .then(console.log(foo))
-//     // .then(function(data) {
-//     //   let x = data.json();
-//     //   console.log(x);
-//     // })
-//   // fetchForecast
-//   //   .then(data => console.log(data))
-//   setInterval(getDestination, delay);
-// })();
+  .then(str => app.locals.dest = str)
+  .then(str => console.log('Up', str));
 
 app.listen(app.get('port'), function() {
   console.log(`Now serving on port ${app.get('port')}`);
