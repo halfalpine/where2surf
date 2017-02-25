@@ -8,13 +8,13 @@ const MSW_URL = `http://magicseaweed.com/api/${API_KEY}/forecast/?spot_id=384`;
 let fetch = require('node-fetch');
 let wavePredictor = require('./js/lib/wave-predictor');
 
-let foo = 'bar';
 app.locals.dest = 'foo';
 
 app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'ejs');
 app.set('views', 'app/views');
 
+app.use(express.static(__dirname + '/public'));
 app.use(require('./js/routers/index'));
 
 // Call initially and recursively call at set interval delay;
