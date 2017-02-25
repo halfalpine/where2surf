@@ -23,9 +23,8 @@ const delay = 3600000;
 fetch(MSW_URL)
   .then(res => res.json())
   .then(json => wavePredictor(json))
-  .then(str => app.locals.dest = str)
-  .then(str => console.log('Up', str));
+  .then(str => app.locals.dest = str);
 
 app.listen(app.get('port'), function() {
-  console.log(`Now serving on port ${app.get('port')}`);
+  console.log(`Now serving on port ${app.get('port')} at ${new Date()}`);
 });
