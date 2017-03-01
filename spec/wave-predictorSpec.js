@@ -1,4 +1,4 @@
-const wavePredictor = require('../app/js/wave-predictor');
+const wavePredictor = require('../app/js/lib/wave-predictor');
 const apiHelper = function({period, height, direction, speed} = {}) {
   const apiObject = [
     {},
