@@ -1,0 +1,19 @@
+archtechture: decide how to format data in return value of wavePredictor
+
+CSS: correctly size MSW logo
+CSS: find a better information icon
+CSS: import a single FA icon from library
+CSS: figure out how to make glowing colors
+CSS: position all elements using flexbox
+CSS: correctly style and position the title
+
+JS: move call to wavePredictor out of server
+
+BDD: add test for API calls
+BDD: test edge cases for compass points
+BDD: check if the use case for spies is actually valid
+
+feature: recommend a specific surfboard
+feature: tomorrow's weather
+feature: 'about' section
+feature: time machine (facebook memories)
