@@ -9,7 +9,7 @@ app.set('views', 'app/views');
 app.use(express.static(__dirname + '/public'));
 app.use(require('./js/routers/index'));
 
-fetchForecast.then(d => app.locals.dest = d);
+fetchForecast.then(fo => app.locals.fo = fo);
 
 app.listen(app.get('port'), function() {
   console.log(`Now serving on port ${app.get('port')} at ${new Date()}`);

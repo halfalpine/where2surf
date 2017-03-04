@@ -1,5 +1,8 @@
 archtechture: decide how to format data in return value of wavePredictor
 
+server: if forecast data isn't present, call MSW API
+server: call the MSW API once per hour
+
 CSS: correctly size MSW logo
 CSS: find a better information icon
 CSS: import a single FA icon from library
