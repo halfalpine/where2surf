@@ -18,14 +18,16 @@
   </header>
   <h1 class="title">Where2Surf</h1>
   <div class="main">
-    <div class="destination">
-      <%= fo.dest %>
-    </div>
-    <div class="info-container">
-      <div class="direction"><%= fo.direction %>º</div>
-      <div class="speed"><%= fo.speed %> mph</div>
-      <div class="period"><%= fo.period %> s</div>
-      <div class="height"><%= fo.height %> ft</div>
+    <div class="results-box">
+      <div class="destination-box">
+        <%= fo.dest %>
+      </div>
+      <div class="info-box">
+        <div class="data top"><%= fo.direction %>º</div>
+        <div class="data top"><%= fo.speed %> mph</div>
+        <div class="data bottom"><%= fo.period %> s</div>
+        <div class="data bottom"><%= fo.height %> ft</div>
+      </div>
     </div>
   </div>
 </body>
