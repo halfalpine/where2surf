@@ -11,11 +11,11 @@ html, body {
   html a:link, html a:visited, html a:hover, html a:active, body a:link, body a:visited, body a:hover, body a:active {
     color: white; }
 
-.main {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
+.Rockaway, .Long, .Jacob, .Democrat {
+  background-color: green; }
+
+.Stay {
+  background-color: red; }
 
 header {
   background-color: #2F2F2F;
@@ -31,9 +31,16 @@ header {
   font-size: 0.5em;
   letter-spacing: .2em; }
 
+.results-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center; }
+
 .results-box {
   display: flex;
   flex-direction: column;
+  width: 50%;
   border: 1px solid white;
   border-radius: 5px; }
 
@@ -48,7 +55,6 @@ header {
   flex-wrap: wrap;
   font-size: .35em; }
   .info-box .data {
-    flex-basis: 50%;
     text-align: center; }
   .info-box .top {
     padding: 5% 0 5% 0;
@@ -60,9 +66,3 @@ header {
     padding-bottom: 5%; }
     .info-box .bottom:last-child {
       border-left: 1px solid white; }
-
-.Rockaway, .Long, .Jacob, .Democrat {
-  background-color: green; }
-
-.Stay {
-  background-color: red; }
