@@ -16,6 +16,7 @@ BDD: add test for API calls
 BDD: test edge cases for compass points
 BDD: check if the use case for spies is actually valid
 
+feature: give wind direction compass points, not degrees
 feature: recommend a specific surfboard
 feature: tomorrow's weather
 feature: 'about' section
