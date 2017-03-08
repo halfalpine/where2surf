@@ -16,22 +16,22 @@
       <img class="msw-logo" src="http://im-1-uk.msw.ms/msw_powered_by.png"/>
     </a>
   </header>
-  <div class="main">
+  <div class="main-container">
     <h1 class="title">Where2Surf</h1>
-    <div class="results-box">
-      <div class="destination-box">
-        <%= fo.dest %>
-      </div>
-      <div>
-        <i class="fa fa-angle-left" aria-hidden="false"></i>
+    <div class="results-row">
+      <i class="fa fa-angle-left" aria-hidden="false"></i>
+      <div class="results-box">
+        <div class="destination-box">
+          <%= fo.dest %>
+        </div>
         <div class="info-box">
           <div class="data top"><%= fo.direction %>º</div>
           <div class="data top"><%= fo.speed %> mph</div>
           <div class="data bottom"><%= fo.period %> s</div>
           <div class="data bottom"><%= fo.height %> ft</div>
         </div>
-        <i class="fa fa-angle-right" aria-hidden="false"></i>
       </div>
+      <i class="fa fa-angle-right" aria-hidden="false"></i>
     </div>
     <i class="fa fa-angle-down" aria-hidden="false"></i>
   </div>
