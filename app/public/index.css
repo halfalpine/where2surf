@@ -63,6 +63,7 @@ header {
   flex-wrap: wrap;
   font-size: .35em; }
   .info-box .data {
+    width: 50%;
     text-align: center; }
   .info-box .top {
     padding: 5% 0 5% 0;
