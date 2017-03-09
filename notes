@@ -1,13 +1,10 @@
-archtechture: decide how to format data in return value of wavePredictor
-
 server: if forecast data isn't present, call MSW API
-server: call the MSW API once per hour
+server: call the MSW API once per hour (production mode)
 
-CSS: Add arrows to left, right, and bottom
 CSS: import a single FA icon from library
 CSS: figure out how to make glowing colors
-CSS: position all elements using flexbox
 CSS: correctly style and position the title
+CSS: show/hide icons after tap
 
 JS: move call to wavePredictor out of server
 
