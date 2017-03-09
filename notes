@@ -3,8 +3,7 @@ archtechture: decide how to format data in return value of wavePredictor
 server: if forecast data isn't present, call MSW API
 server: call the MSW API once per hour
 
-CSS: correctly size MSW logo
-CSS: find a better information icon
+CSS: Add arrows to left, right, and bottom
 CSS: import a single FA icon from library
 CSS: figure out how to make glowing colors
 CSS: position all elements using flexbox
@@ -16,10 +15,12 @@ BDD: add test for API calls
 BDD: test edge cases for compass points
 BDD: check if the use case for spies is actually valid
 
-feature: give wind direction compass points, not degrees
+copy: add information description for the app
+
 feature: recommend a specific surfboard
 feature: tomorrow's weather
 feature: 'about' section
 feature: time machine (facebook memories)
+feature: add fav.ico
 
 ERR: Green @ 217º 5mph 12s 0.4'
