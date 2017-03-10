@@ -4,6 +4,7 @@ server: call the MSW API once per hour (production mode)
 CSS: import a single FA icon from library
 CSS: figure out how to make glowing colors
 CSS: show/hide icons after tap
+CSS: add separate file for CSS variables
 
 JS: move call to wavePredictor out of server
 

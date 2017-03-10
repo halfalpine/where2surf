@@ -34,11 +34,11 @@ header {
   height: 100%;
   margin-left: auto; }
 
-.title {
-  margin: 15% 0 0 0;
-  text-align: center;
-  font-size: 0.5em;
-  letter-spacing: .2em; }
+.fa-angle-left {
+  margin-left: 2%; }
+
+.fa-angle-right {
+  margin-right: 2%; }
 
 .results-row {
   display: flex;
@@ -76,3 +76,9 @@ header {
     padding-bottom: 5%; }
     .info-box .bottom:last-child {
       border-left: 1px solid white; }
+
+.title {
+  margin: 15% 0 0 0;
+  text-align: center;
+  font-size: 0.5em;
+  letter-spacing: .2em; }
