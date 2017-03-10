@@ -1,4 +1,3 @@
-server: if forecast data isn't present, call MSW API
 server: call the MSW API once per hour (production mode)
 
 CSS: import a single FA icon from library
