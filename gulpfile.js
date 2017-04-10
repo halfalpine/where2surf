@@ -1,9 +1,9 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var ejs = require('gulp-ejs');
-var nodemon = require('gulp-nodemon');
-var livereload = require('gulp-livereload');
-var notify = require('gulp-notify');
+// var nodemon = require('gulp-nodemon');
+// var livereload = require('gulp-livereload');
+// var notify = require('gulp-notify');
 var browserSync = require('browser-sync');
 var runSequence = require('run-sequence');
 
