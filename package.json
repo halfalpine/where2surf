@@ -4,7 +4,7 @@
   "description": " ",
   "main": "./app.js",
   "scripts": {
-    "start": "nodemon app/app.js",
+    "start": "nodemon app.js",
     "build-css": "node-sass --include-path sass publics/sass/index.sass   public/css/index.css",
     "test": "./node_modules/.bin/jasmine"
   },

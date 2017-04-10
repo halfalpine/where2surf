@@ -16,7 +16,7 @@ var nodemonServerInit = function(){
             gulp.src('app.js')
                 .pipe(livereload())
                 .pipe(notify('Reloading page, please wait...'));
-        })
+        });
 };
 
 gulp.task('browserSync', function() {
@@ -28,7 +28,7 @@ gulp.task('browserSync', function() {
 });
 
 gulp.task('ejs', function() {
-  return gulp.src('app/views/**/*.ejs')
+  return gulp.src('views/**/*.ejs')
   .pipe(ejs({
     msg: 'Hello Gulp!'
   }))
@@ -36,18 +36,17 @@ gulp.task('ejs', function() {
 });
 
 gulp.task('sass', function() {
-  return gulp.src('app/sass/**/*.sass')
+  return gulp.src('public/sass/**/*.sass')
   .pipe(sass().on('error', sass.logError))
-  .pipe(gulp.dest('app/css'))
+  .pipe(gulp.dest('public/css'))
   .pipe(browserSync.reload({
     stream: true
   }));
 });
 
 gulp.task('watch', function() {
-  gulp.watch('app/sass/**/*.sass', ['sass']);
-  gulp.watch('app/views/**/*.ejs', browserSync.reload);
-  gulp.watch('app/js/**/*.js', browserSync.reload);
+  gulp.watch('public/sass/**/*.sass', ['sass']);
+  gulp.watch('views/**/*.ejs', browserSync.reload);
 });
 
 gulp.task('default', function(cb) {
