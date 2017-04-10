@@ -15,21 +15,24 @@
       <img class="msw-logo" src="http://im-1-uk.msw.ms/msw_powered_by.png"/>
     </a>
   </header>
-  <div class="main-container">
+  <section class="main-container <%= today.dest %>">
     <h1 class="title">Where2Surf</h1>
     <div class="results-row">
       <i class="fa fa-angle-left" aria-hidden="false"></i>
       <div class="results-box">
         <div class="destination-box">
-          <%= today.speed %>
+          <%= today.dest %>
         </div>
         <div class="info-box">
-
+          <div class="data-top"><%= today.direction %></div>
+          <div class="data-top"><%= today.speed %></div>
+          <div class="data-bottom"><%= today.period %></div>
+          <div class="data-bottom"><%= today.height %></div>
         </div>
       </div>
       <i class="fa fa-angle-right" aria-hidden="false"></i>
     </div>
     <i class="fa fa-angle-down" aria-hidden="false"></i>
-  </div>
+  </section>
 </body>
 </html>
