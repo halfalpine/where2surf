@@ -7,7 +7,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 cacheForecast(app);
-setInterval(cacheForecast, 3000, app);
+setInterval(cacheForecast, 3600000, app);
 
 app.use(express.static(__dirname + '/public'));
 //  app.use(require('./routers/index'));
