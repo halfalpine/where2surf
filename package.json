@@ -5,7 +5,7 @@
   "main": "./app.js",
   "scripts": {
     "start": "nodemon app.js",
-    "build-css": "node-sass --include-path sass publics/sass/index.sass   public/css/index.css",
+    "build-css": "node-sass --include-path sass public/sass/index.sass   public/css/index.css",
     "test": "./node_modules/.bin/jasmine"
   },
   "repository": {},
