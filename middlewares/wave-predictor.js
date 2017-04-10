@@ -124,6 +124,7 @@ module.exports = function(forecast, index) {
       return direction >= 360 ? direction - 360 : direction;
     }
 
+// Attribution: https://gist.github.com/basarat/4670200
     function getCardinal(angle) {
         //easy to customize by changing the number of directions you have
         var directions = 8;
