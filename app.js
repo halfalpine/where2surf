@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const fetchForecast = require('./js/lib/forecast');
+const fetchForecast = require('./middlewares/forecast');
 
 app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'ejs');
