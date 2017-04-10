@@ -2,10 +2,10 @@
   "name": "where2surf",
   "version": "1.0.0",
   "description": " ",
-  "main": "./app/app.js",
+  "main": "./app.js",
   "scripts": {
     "start": "nodemon app/app.js",
-    "build-css": "node-sass --include-path sass app/sass/index.sass   app/public/index.css",
+    "build-css": "node-sass --include-path sass publics/sass/index.sass   public/css/index.css",
     "test": "./node_modules/.bin/jasmine"
   },
   "repository": {},
