@@ -7,17 +7,17 @@ var notify = require('gulp-notify');
 var browserSync = require('browser-sync');
 var runSequence = require('run-sequence');
 
-var nodemonServerInit = function(){
-        livereload.listen();
-        nodemon({
-            script: 'app.js',
-            ext: 'js'
-        }).on('restart', function(){
-            gulp.src('app.js')
-                .pipe(livereload())
-                .pipe(notify('Reloading page, please wait...'));
-        });
-};
+// var nodemonServerInit = function(){
+//         livereload.listen();
+//         nodemon({
+//             script: 'app.js',
+//             ext: 'js'
+//         }).on('restart', function(){
+//             gulp.src('app.js')
+//                 .pipe(livereload())
+//                 .pipe(notify('Reloading page, please wait...'));
+//         });
+// };
 
 gulp.task('browserSync', function() {
   browserSync({
@@ -50,6 +50,6 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', function(cb) {
-  runSequence(['nodemon', 'ejs', 'sass', 'browserSync', 'watch'],
+  runSequence([/*'nodemon', */'ejs', 'sass', 'browserSync', 'watch'],
   cb);
 });
