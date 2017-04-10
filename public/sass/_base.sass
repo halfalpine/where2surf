@@ -2,7 +2,7 @@
   box-sizing: border-box
 
 html, body
-  height: 100%
+  height: 100vh
   color: white
   font-family: 'Lato', sans-serif
   font-size: 1.5em
@@ -11,9 +11,21 @@ html, body
     &:link, &:visited, &:hover, &:active
       color: white
 
-.main-container
+section
+  height: 92.5vh
+  display: none
+
+.active
+  display: block
+
+.row
   display: flex
-  position: relative
+  width: 100%
+  height: 92.5vh
+  padding-bottom: 20%
+  justify-content: space-between
+  align-items: center
+  border: 5px solid yellow
 
 .Rockaway, .Long, .Jacob, .Democrat
   background-color: green

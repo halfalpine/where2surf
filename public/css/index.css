@@ -3,20 +3,29 @@
   box-sizing: border-box; }
 
 html, body {
-  height: 100%;
+  height: 100vh;
   color: white;
   font-family: 'Lato', sans-serif;
   font-size: 1.5em;
-  font-weight: 100; }
+  font-weight: 200; }
   html a:link, html a:visited, html a:hover, html a:active, body a:link, body a:visited, body a:hover, body a:active {
     color: white; }
 
-.main-container {
+section {
+  height: 92.5vh;
+  display: none; }
+
+.active {
+  display: block; }
+
+.row {
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  height: 92.5vh;
+  padding-bottom: 20%;
   justify-content: space-between;
   align-items: center;
-  height: 92.5%; }
+  border: 5px solid yellow; }
 
 .Rockaway, .Long, .Jacob, .Democrat {
   background-color: green; }
@@ -27,7 +36,7 @@ html, body {
 header {
   background-color: #2F2F2F;
   border-bottom: 2px solid black;
-  height: 7.5%; }
+  height: 7.5vh; }
 
 .msw-logo {
   display: block;
@@ -39,12 +48,6 @@ header {
 
 .fa-angle-right {
   margin-right: 2%; }
-
-.results-row {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center; }
 
 .results-box {
   display: flex;
@@ -66,10 +69,10 @@ header {
   .info-box .data {
     width: 50%;
     text-align: center; }
-  .info-box .top {
+  .info-box .data-top {
     padding: 5% 0 5% 0;
     border-bottom: 1px solid white; }
-    .info-box .top:nth-child(2) {
+    .info-box .data-top:nth-child(2) {
       border-left: 1px solid white; }
   .info-box .bottom {
     padding-top: 5%;
