@@ -10,7 +10,7 @@ cacheForecast(app);
 setInterval(cacheForecast, 3600000, app);
 
 app.use(express.static(__dirname + '/public'));
-//  app.use(require('./routers/index'));
+app.use(require('./routers/index'));
 
 app.listen(app.get('port'), function() {
   console.log(`Now serving on port ${app.get('port')} at ${new Date()}`);
