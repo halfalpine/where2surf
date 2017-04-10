@@ -7,7 +7,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'app/views');
 
 app.use(express.static(__dirname + '/public'));
-app.use(require('./js/routers/index'));
+app.use(require('./routers/index'));
 
 fetchForecast.then(fo => app.locals.fo = fo);
 
