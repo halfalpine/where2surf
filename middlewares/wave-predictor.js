@@ -1,7 +1,7 @@
-module.exports = function(forecast) {
+module.exports = function(forecast, index) {
   let forecastObject = {};
-  const { direction, speed } = forecast[1].wind;
-  const { height, period } = forecast[1].swell.components.combined;
+  const { direction, speed } = forecast[index].wind;
+  const { height, period } = forecast[index].swell.components.combined;
   // console.log({direction, speed, height, period});
   let dest = 'Stay home';
 
