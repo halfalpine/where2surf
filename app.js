@@ -4,7 +4,7 @@ const fetchForecast = require('./middlewares/forecast');
 
 app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'ejs');
-app.set('views', 'app/views');
+app.set('views', 'views');
 
 app.use(express.static(__dirname + '/public'));
 app.use(require('./routers/index'));
