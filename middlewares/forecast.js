@@ -12,4 +12,4 @@ let dest;
 module.exports = fetch(MSW_URL)
   .then(res => res.json())
   .then(json => wavePredictor(json))
-  .then(str => str);
+  .then(str => console.log(str));
