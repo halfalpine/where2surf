@@ -28,3 +28,15 @@
       padding-bottom: 5%
       &:last-child
         border-left: 1px solid white
+
+@include media('>=tablet')
+  .results-box
+    max-width: 600px
+
+    .destination-box
+      font-size: 2em
+      line-height: 2
+
+    .info-box
+      font-size: 2em
+      line-height: 1

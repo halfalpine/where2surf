@@ -79,6 +79,16 @@ header {
     .info-box .bottom:last-child {
       border-left: 1px solid white; }
 
+@media (min-width: 768px) {
+  .results-box {
+    max-width: 600px; }
+    .results-box .destination-box {
+      font-size: 2em;
+      line-height: 2; }
+    .results-box .info-box {
+      font-size: 2em;
+      line-height: 1; } }
+
 .title {
   margin: 15% 0 0 0;
   text-align: center;
