@@ -24,8 +24,7 @@ section {
   height: 92.5vh;
   padding-bottom: 20%;
   justify-content: space-between;
-  align-items: center;
-  border: 5px solid yellow; }
+  align-items: center; }
 
 .Rockaway, .Long, .Jacob, .Democrat {
   background-color: green; }
@@ -69,10 +68,10 @@ header {
   .info-box .data {
     width: 50%;
     text-align: center; }
-  .info-box .data-top {
+  .info-box .top {
     padding: 5% 0 5% 0;
     border-bottom: 1px solid white; }
-    .info-box .data-top:nth-child(2) {
+    .info-box .top:nth-child(2) {
       border-left: 1px solid white; }
   .info-box .bottom {
     padding-top: 5%;
