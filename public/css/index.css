@@ -32,6 +32,10 @@ section {
 .Stay {
   background-color: red; }
 
+@media (min-width: 768px) {
+  section {
+    height: 95vh; } }
+
 header {
   background-color: #2F2F2F;
   border-bottom: 2px solid black;
@@ -41,6 +45,10 @@ header {
   display: block;
   height: 100%;
   margin-left: auto; }
+
+@media (min-width: 768px) {
+  header {
+    height: 5vh; } }
 
 .fa-angle-left {
   margin-left: 2%; }
