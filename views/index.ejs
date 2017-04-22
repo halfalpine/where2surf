@@ -16,8 +16,24 @@
     </a>
   </header>
   <section class="details screen"></section>
+  <%- include('partials/forecast', {
+    dest: today.dest,
+    direction: today.direction,
+    speed: today.speed,
+    period: today.period,
+    height: today.height
+  }) %>
+  <!-- <%- include('partials/forecast', {
+    dest: tomorrow.dest,
+    direction: tomorrow.direction,
+    speed: tomorrow.speed,
+    period: tomorrow.period,
+    height: tomorrow.height
+  }) %> -->
   <section class="<%= today.dest %> screen active">
-    <!-- <h1 class="title">Where2Surf</h1> -->
+    <div class="title-container">
+      <h1>Title copy</h1>
+    </div>
     <div class="row">
       <i class="fa fa-angle-left" aria-hidden="false"></i>
       <div class="results-box">
@@ -33,7 +49,6 @@
       </div>
       <i class="fa fa-angle-right" aria-hidden="false"></i>
     </div>
-    <!-- <i class="fa fa-angle-down" aria-hidden="false"></i> -->
   </section>
   <section class="tomorrow screen"></section>
 </body>
