@@ -15,7 +15,6 @@
       <img class="msw-logo" src="http://im-1-uk.msw.ms/msw_powered_by.png"/>
     </a>
   </header>
-  <section class="details screen"></section>
   <%- include('partials/forecast', {
     day: 'today',
     dest: today.dest,
@@ -32,26 +31,5 @@
     period: tomorrow.period,
     height: tomorrow.height
   }) %>
-  <section class="<%= today.dest %> screen active">
-    <div class="title-container">
-      <h1>Title copy</h1>
-    </div>
-    <div class="row">
-      <i class="fa fa-angle-left" aria-hidden="false"></i>
-      <div class="results-box">
-        <div class="destination-box">
-          <%= today.dest %>
-        </div>
-        <div class="info-box">
-          <div class="data top"><%= today.direction %></div>
-          <div class="data top"><%= today.speed %>mph</div>
-          <div class="data bottom"><%= today.period %>s</div>
-          <div class="data bottom"><%= today.height %>'</div>
-        </div>
-      </div>
-      <i class="fa fa-angle-right" aria-hidden="false"></i>
-    </div>
-  </section>
-  <section class="tomorrow screen"></section>
 </body>
 </html>
