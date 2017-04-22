@@ -32,7 +32,7 @@ section {
 .Stay {
   background-color: red; }
 
-.tomorrow {
+.Tomorrow {
   display: none; }
 
 @media (min-width: 768px) {
@@ -100,8 +100,7 @@ header {
       font-size: 2em;
       line-height: 1; } }
 
-.title {
-  margin: 15% 0 0 0;
+.title-container {
   text-align: center;
   font-size: 0.5em;
   letter-spacing: .2em; }

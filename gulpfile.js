@@ -23,15 +23,15 @@ var runSequence = require('run-sequence');
 gulp.task('browserSync', function() {
   browserSync({
     server: {
-      baseDir: 'app'
+      baseDir: './',
+      server: 'app.js'
     }
   });
 });
 
 gulp.task('ejs', function() {
-  return gulp.src('views/**/*.ejs')
-  .pipe(ejs()
-    .on('error', gutil.log))
+  return gulp.src('./views/**/*.ejs')
+  .pipe(ejs().on('error', gutil.log))
   .pipe(gulp.dest('./public'));
 });
 
@@ -44,7 +44,7 @@ gulp.task('sass', function() {
   }));
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', ['browserSync', 'sass'], function() {
   gulp.watch('public/sass/**/*.sass', ['sass']);
   gulp.watch('views/**/*.ejs', browserSync.reload);
 });
