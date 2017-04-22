@@ -17,19 +17,21 @@
   </header>
   <section class="details screen"></section>
   <%- include('partials/forecast', {
+    day: 'today',
     dest: today.dest,
     direction: today.direction,
     speed: today.speed,
     period: today.period,
     height: today.height
   }) %>
-  <!-- <%- include('partials/forecast', {
+  <%- include('partials/forecast', {
+    day: 'tomorrow',
     dest: tomorrow.dest,
     direction: tomorrow.direction,
     speed: tomorrow.speed,
     period: tomorrow.period,
     height: tomorrow.height
-  }) %> -->
+  }) %>
   <section class="<%= today.dest %> screen active">
     <div class="title-container">
       <h1>Title copy</h1>

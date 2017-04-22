@@ -32,6 +32,9 @@ section {
 .Stay {
   background-color: red; }
 
+.tomorrow {
+  display: none; }
+
 @media (min-width: 768px) {
   section {
     height: 95vh; } }
