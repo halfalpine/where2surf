@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var ejs = require('gulp-ejs');
+var gutil = require('gulp-util');
 // var nodemon = require('gulp-nodemon');
 // var livereload = require('gulp-livereload');
 // var notify = require('gulp-notify');
@@ -29,9 +30,8 @@ gulp.task('browserSync', function() {
 
 gulp.task('ejs', function() {
   return gulp.src('views/**/*.ejs')
-  .pipe(ejs({
-    msg: 'Hello Gulp!'
-  }))
+  .pipe(ejs()
+    .on('error', gutil.log))
   .pipe(gulp.dest('./public'));
 });
 
