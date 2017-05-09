@@ -6,20 +6,26 @@
   border-radius: 5px
 
 .destination-box
-  text-align: center
-  padding: 5%
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  position: relative
+  padding: 2.5vh 0
   border-bottom: 2px solid white
-  font-size: 1em
+  font-size: 5vh
+
 
 .info-box
   display: flex
   flex-wrap: wrap
-  font-size: .35em
+  justify-content: flex-start
+  font-size: 5vh
   .data
     width: 50%
     text-align: center
   .top
-      padding: 5% 0 5% 0
+      padding: 5vh 0
       border-bottom: 2px solid white
       &:nth-child(2)
         border-left: 2px solid white
@@ -29,14 +35,25 @@
       &:last-child
         border-left: 2px solid white
 
-@include media('>=tablet')
-  .results-box
-    max-width: 600px
+// @include media('>=tablet')
+//   .results-box
+//     max-width: 600px
+//
+//     .destination-box
+//       font-size: 2em
+//       line-height: 2
+//
+//     .info-box
+//       font-size: 2em
+//       line-height: 1
 
-    .destination-box
-      font-size: 2em
-      line-height: 2
+.vertical
+  position: absolute
+  top: 5vh
+  left: 0
+  width: 10vh
+  transform: rotate(-90deg) translate(0, -4vh)
+  text-align: center
+  font-size: 1.5vh
 
-    .info-box
-      font-size: 2em
-      line-height: 1
+  border: 1px solid blue

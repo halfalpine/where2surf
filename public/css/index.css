@@ -67,20 +67,25 @@ header {
   border-radius: 5px; }
 
 .destination-box {
-  text-align: center;
-  padding: 5%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 2.5vh 0;
   border-bottom: 2px solid white;
-  font-size: 1em; }
+  font-size: 5vh; }
 
 .info-box {
   display: flex;
   flex-wrap: wrap;
-  font-size: .35em; }
+  justify-content: flex-start;
+  font-size: 5vh; }
   .info-box .data {
     width: 50%;
     text-align: center; }
   .info-box .top {
-    padding: 5% 0 5% 0;
+    padding: 5vh 0;
     border-bottom: 2px solid white; }
     .info-box .top:nth-child(2) {
       border-left: 2px solid white; }
@@ -90,15 +95,15 @@ header {
     .info-box .bottom:last-child {
       border-left: 2px solid white; }
 
-@media (min-width: 768px) {
-  .results-box {
-    max-width: 600px; }
-    .results-box .destination-box {
-      font-size: 2em;
-      line-height: 2; }
-    .results-box .info-box {
-      font-size: 2em;
-      line-height: 1; } }
+.vertical {
+  position: absolute;
+  top: 5vh;
+  left: 0;
+  width: 10vh;
+  transform: rotate(-90deg) translate(0, -4vh);
+  text-align: center;
+  font-size: 1.5vh;
+  border: 1px solid blue; }
 
 .title {
   margin: 15% 0 0 0;
