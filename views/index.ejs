@@ -10,6 +10,7 @@
   <link rel="stylesheet" type="text/css" href="css/index.css" />
   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
+  <body>
   <header>
     <a href="http://magicseaweed.com">
       <img class="msw-logo" src="http://im-1-uk.msw.ms/msw_powered_by.png"/>
@@ -19,7 +20,7 @@
   <section class="<%= today.dest %> screen active">
     <!-- <h1 class="title">Where2Surf</h1> -->
     <div class="row">
-      <i class="fa fa-angle-left" aria-hidden="false"></i>
+      <i class="<%= today.dest %> fa fa-angle-left" aria-hidden="false"></i>
       <div class="results-box">
         <div class="destination-box">
           <div class="label">Destination</div>
@@ -32,7 +33,7 @@
           <div class="data bottom"><div class="label label-height">Height</div><%= today.height %>'</div>
         </div>
       </div>
-      <i class="fa fa-angle-right" aria-hidden="false"></i>
+      <i class="<%= today.dest %> fa fa-angle-right" aria-hidden="false"></i>
     </div>
     <!-- <i class="fa fa-angle-down" aria-hidden="false"></i> -->
   </section>

@@ -31,6 +31,8 @@ section {
 
 .Stay {
   background-color: red; }
+  .Stay .fa {
+    color: red; }
 
 header {
   background-color: #2F2F2F;
@@ -51,9 +53,6 @@ header {
 
 .fa-angle-right {
   margin-right: 2%; }
-
-.fa {
-  color: green; }
 
 .results-box {
   display: flex;
