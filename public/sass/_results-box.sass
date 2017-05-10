@@ -11,7 +11,7 @@
   justify-content: center
   align-items: center
   position: relative
-  padding: 2.5vh 0
+  padding: 3vh 0
   border-bottom: 2px solid white
   font-size: 5vh
 
@@ -22,6 +22,7 @@
   justify-content: flex-start
   font-size: 5vh
   .data
+    position: relative
     width: 50%
     text-align: center
   .top
@@ -49,11 +50,22 @@
 
 .vertical
   position: absolute
-  top: 5vh
+  bottom: 0
   left: 0
-  width: 10vh
-  transform: rotate(-90deg) translate(0, -4vh)
-  text-align: center
-  font-size: 1.5vh
+  transform: rotate(-90deg)
+  transform-origin: top left
+  margin-bottom: -1.75vh
+  font-size: 2vh
+  z-index: 2
 
-  border: 1px solid blue
+.vert-dir
+  margin-bottom: -1vh
+
+.vert-speed
+  margin-bottom: .25vh
+
+.vert-period
+  margin-bottom: .25vh
+
+.vert-height
+  margin-bottom: .25vh
