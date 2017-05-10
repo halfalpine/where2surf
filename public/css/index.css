@@ -12,7 +12,7 @@ html, body {
     color: white; }
 
 section {
-  height: 92.5vh;
+  height: 95vh;
   display: none; }
 
 .active {
@@ -32,21 +32,17 @@ section {
 .Stay {
   background-color: red; }
 
-@media (min-width: 768px) {
-  section {
-    height: 95vh; } }
-
 header {
   background-color: #2F2F2F;
   border-bottom: 2px solid black;
-  height: 7.5vh; }
+  height: 5vh; }
 
 .msw-logo {
   display: block;
   height: 100%;
   margin-left: auto; }
 
-@media (min-width: 768px) {
+@media only screen and (max-width: 768px) {
   header {
     height: 5vh; } }
 
@@ -96,7 +92,7 @@ header {
     .info-box .bottom:last-child {
       border-left: 2px solid white; }
 
-.vertical {
+.label {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -106,17 +102,23 @@ header {
   font-size: 2vh;
   z-index: 2; }
 
-.vert-dir {
+.label-dir {
   margin-bottom: -1vh; }
 
-.vert-speed {
+.label-speed {
   margin-bottom: .25vh; }
 
-.vert-period {
+.label-period {
   margin-bottom: .25vh; }
 
-.vert-height {
+.label-height {
   margin-bottom: .25vh; }
+
+@media only screen and (max-width: 768px) {
+  .label {
+    transform: none;
+    margin: .25vh;
+    font-size: 1.5vh; } }
 
 .title {
   margin: 15% 0 0 0;

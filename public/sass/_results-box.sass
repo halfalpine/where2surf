@@ -48,7 +48,7 @@
 //       font-size: 2em
 //       line-height: 1
 
-.vertical
+.label
   position: absolute
   bottom: 0
   left: 0
@@ -58,14 +58,20 @@
   font-size: 2vh
   z-index: 2
 
-.vert-dir
+.label-dir
   margin-bottom: -1vh
 
-.vert-speed
+.label-speed
   margin-bottom: .25vh
 
-.vert-period
+.label-period
   margin-bottom: .25vh
 
-.vert-height
+.label-height
   margin-bottom: .25vh
+
+@media only screen and (max-width: 768px)
+  .label
+    transform: none
+    margin: .25vh
+    font-size: 1.5vh
